@@ -1,0 +1,21 @@
+{
+  "name": "bookmarks-ui",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "parcel build ./js/main.js --out-dir ../../static/dist/",
+    "start": "parcel ./js/main.js --out-dir ../../static/dist/",
+    "format": "prettier . --write"
+  },
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^2.3.0",
+    "autoprefixer": "^9.8.4",
+    "parcel-bundler": "^1.12.4",
+    "postcss-cli": "^7.1.1",
+    "prettier": "^2.0.5",
+    "tailwindcss": "^1.4.6",
+    "tailwindcss-padding-safe": "^1.0.5"
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,6 @@
+# supported browsers:
+
+last 2 versions
+not <0.2%
+not dead
+not IE > 0
