@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'tp5r=boenbt=$_kzoiqsod#7*hpi(qau3wm0u8-$yp*7-1ua5i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['bookmarks.sib.dev']
 
 
 # Application definition
@@ -55,7 +55,9 @@ ROOT_URLCONF = 'bookmarks.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['bookmarks/templates'],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'bookmarks', 'templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -105,7 +107,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'pub', 'static')
+
+STATIC_URL = os.environ.get('DJANGO_STATIC_URL', '/static/')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]

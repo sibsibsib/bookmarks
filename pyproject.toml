@@ -2,18 +2,22 @@
 name = "bookmarks"
 version = "0.1.0"
 description = ""
-authors = ["sib <andrew.sibley@gmail.com>"]
+authors = [""]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "~3.8"
 django = "^3.0.7"
+gunicorn = {version = "^20.0.4", optional = true}
+
 
 [tool.poetry.dev-dependencies]
-pytest = "^5.2"
 flake8 = "^3.8.3"
 black = "^19.10b0"
 bpython = "^0.19"
 pywatchman = "^1.4.1"
+
+[tool.poetry.extras]
+production = ["gunicorn"]
 
 [tool.black]
 line-length = 120
